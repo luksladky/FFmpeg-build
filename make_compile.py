@@ -14,9 +14,11 @@ if __name__ == "__main__":
     parser = ArgumentParser(description="Configure & Make & Install FFmpeg.")
     parser.add_argument("--ffmpeg_dir", type=str, default=os.getcwd(), help='indicate FFmpeg dir.')
     parser.add_argument("--target_dir", type=str, default=os.getcwd(), help='indicate target dir.')
+    parser.add_argument("--compile_args", type=str, default="", help='additional configure flags')
     args = parser.parse_args()
     ffmpeg_dir = pathlib.Path(args.ffmpeg_dir).absolute()
     target_dir = pathlib.Path(args.target_dir).absolute()
+    compile_args = args.compile_args
     print(f"Compile... {ffmpeg_dir}")
 
 
@@ -30,8 +32,9 @@ if __name__ == "__main__":
         print("Configure project.")
         execute(
             f"cd {ffmpeg_dir} && ./configure --enable-cross-compile --prefix={target_dir / ('install_' + arch + '/')} "
-            f"--enable-shared --disable-static --arch={arch} --cc='clang -arch {arch}'"
+            f"--enable-shared --disable-static {compile_args} --arch={arch} --cc='clang -arch {arch}'"
         )
+        
         print(f"Make project ({n_cpu} threads).")
         execute(f"cd {ffmpeg_dir} && make -j{n_cpu}")
         print(f"Install project.")

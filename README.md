@@ -20,7 +20,7 @@ You may compile it by yourself or download and install prebuild binary.
     python ../build-script/make_universal.py
     python ../build-script/package.py --tag n5.0.1
     ```
-
+±
 - **Install Prebuilt Binary**
 
   You may download from [release](https://github.com/ColorsWind/FFmpeg-macOS/releases/) and install it by `install.py`.
@@ -32,7 +32,13 @@ You may compile it by yourself or download and install prebuild binary.
   ```
   Then, FFmpeg-shared will be installed on `~/ffmpeg-n5.0.1`.
 
-  
+
+## Initializing
+```
+git config --global core.autocrlf input
+
+```
+
 ## Custom
 
 If you want to make changed compile parameters, (e.g. add decoders support or build static library), here is a description about those scripts.
