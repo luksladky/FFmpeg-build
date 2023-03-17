@@ -5,6 +5,12 @@ FFmpeg shared universal binaries (x86_64 and arm64) for macOS.
 
 You may compile it by yourself or download and install prebuild binary.
 
+Compile it into `./build/install_universal` by running
+
+```
+sudo ./build.sh
+```
+
 - **Compile FFmpeg by yourself.**
 
     By default, our script will compile FFmpeg with `--enable-shared --disable-static`, if you want to use custom flags, you can edit `make_compile.py`.
@@ -20,7 +26,7 @@ You may compile it by yourself or download and install prebuild binary.
     python ../build-script/make_universal.py
     python ../build-script/package.py --tag n5.0.1
     ```
-±
+
 - **Install Prebuilt Binary**
 
   You may download from [release](https://github.com/ColorsWind/FFmpeg-macOS/releases/) and install it by `install.py`.
@@ -32,12 +38,6 @@ You may compile it by yourself or download and install prebuild binary.
   ```
   Then, FFmpeg-shared will be installed on `~/ffmpeg-n5.0.1`.
 
-
-## Initializing
-```
-git config --global core.autocrlf input
-
-```
 
 ## Custom
 
