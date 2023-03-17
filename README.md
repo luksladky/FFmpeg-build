@@ -8,6 +8,7 @@ You may compile it by yourself or download and install prebuild binary.
 Compile it into `./build/install_universal` by running
 
 ```
+./init.sh
 sudo ./build.sh
 ```
 

@@ -1,5 +1,4 @@
 build
-ffmpeg/*
 install
 
 # Byte-compiled / optimized / DLL files
