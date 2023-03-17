@@ -26,8 +26,8 @@ def rename_dylib_reference(base_dir: pathlib.Path, file: pathlib.Path):
 
 if __name__ == "__main__":
     parser = ArgumentParser(description="Package the generated files into ZIP.")
-    parser.add_argument("ffmpeg_path", type=str, help='indicate FFmpeg dir or archive.')
-    parser.add_argument("target_dir", type=str, help='indicate target.')
+    parser.add_argument("--ffmpeg_path", type=str, help='indicate FFmpeg dir or archive.')
+    parser.add_argument("--target_dir", type=str, help='indicate target.')
     args = parser.parse_args()
     ffmpeg_path = pathlib.Path(args.ffmpeg_path)
     target_dir = pathlib.Path(args.target_dir)
