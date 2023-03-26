@@ -6,7 +6,7 @@ python make_universal.py --dir ./build
 UNIVERSAL_DIR="./build/install_universal/lib"
 echo "----- Signing the universal binaries -----"
 security find-identity -v -p codesigning
-CERT_ID=$(security find-identity -v -p codesigning | grep ":" | awk '{print $2}')
+CERT_ID=$(security find-identity -v -p codesigning | grep "Developer ID" | awk '{print $2}')
 for file in $(ls $UNIVERSAL_DIR)
 do
     bin_path="$UNIVERSAL_DIR/$file"
